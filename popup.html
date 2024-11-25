@@ -1,0 +1,25 @@
+<!-- popup.html -->
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1>Extracted Links</h1>
+    <ul id="linksList"></ul>
+    <script>
+      // Get the links from localStorage and display them in the popup
+      chrome.storage.local.get("emailLinks", (data) => {
+        const linksList = document.getElementById("linksList");
+        if (data.emailLinks) {
+          data.emailLinks.forEach((link) => {
+            const li = document.createElement("li");
+            li.textContent = link;
+            linksList.appendChild(li);
+          });
+        } else {
+          const li = document.createElement("li");
+          li.textContent = "No links found.";
+          linksList.appendChild(li);
+        }
+      });
+    </script>
+  </body>
+</html>

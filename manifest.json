@@ -1,0 +1,11 @@
+{
+  "manifest_version": 3,
+  "name": "Email Link Tracker",
+  "version": "1.0",
+  "description": "Tracks links clicked while on a page containing 'mail' in the URL and saves them to a file.",
+  "permissions": ["scripting", "downloads", "webNavigation", "tabs"],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "background.js"
+  }
+}
